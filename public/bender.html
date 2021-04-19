@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <title>Asked</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/my.css" rel="stylesheet">
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+        
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+
+</head>
+
+<body class="d-flex flex-column h-100">
+
+    <header>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="container-fluid spacearound">
+                <a class="navbar-brand med-text" href="#">Asked Kravtsov</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+                <form class="d-flex search-box">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Ask</button>
+                </form>
+                <div class="row header">
+                    <div id="user-block-login" class="user-block-visible">
+                        <div class="col-4">
+                            <img src="../static/img/avatar.jpg">
+
+                        </div>
+                        <div class="col-8">
+
+                            <div>Dr. Pepper</div>
+                            <button id="settings-btn" class="btn btn-outline-primary" type="submit">settings</button>
+                            <!-- <a href="#">settings</a> -->
+                            <button id="logout-btn" class="btn btn-outline-primary" type="submit">log out</button>
+                            <!-- <a id="login-btn" href="#">log out</a> -->
+                        </div>
+                    </div>
+                    <div id="user-block-logout" class="col-12 user-block-hidden">
+                        <button id="login-btn" type="button" class="btn btn-primary">Log in</button>
+                        <button id="register-btn" type="button" class="btn btn-primary">Register</button>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Begin page content -->
+    <main class="flex-shrink-0">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <!-- {% extends "../public/index.html" %} -->
+                    <div class="question-header">
+                        <span class="med-text ">Tag:</span><span class="med-text marginleft40">Bender</span>
+                    </div>
+
+                    <div class="row question">
+
+                        <div class="col-3">
+                            <img src="../static/img/avatar.jpg">
+                            <p><input class="stat" type="number" name="t" value="0" step="1"></p>
+                        </div>
+                        <div class="col-9">
+                            <a href="#">
+                                <h2>Lorem ipsum dolor sit amet</h2>
+                            </a>
+                            <div>
+                                ore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in rep
+                            </div>
+                            <div class="question-footer">
+                                <span class="normal-text "><a href="#">answer (3)</a><span><span class = "normal-text marginleft40">Tags: <a class = "marginleft10" href="#">black-jack</a><a class = "marginleft10" href="#">bender</a><span></span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row question">
+
+                        <div class="col-3">
+                            <img src="../static/img/avatar.jpg">
+                            <p><input class="stat" type="number" name="t" value="0" step="1"></p>
+                        </div>
+                        <div class="col-9">
+                            <a href="#">
+                                <h2>Lorem ipsum dolor sit amet</h2>
+                            </a>
+                            <div>
+                                ore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in rep
+                            </div>
+                            <div class="question-footer">
+                                <span class="normal-text "><a href="#">answer (3)</a><span><span class = "normal-text marginleft40">Tags: <a class = "marginleft10" href="#">black-jack</a><a class = "marginleft10" href="#">bender</a><span></span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row question">
+
+                        <div class="col-3">
+                            <img src="../static/img/avatar.jpg">
+                            <p><input class="stat" type="number" name="t" value="0" step="1"></p>
+                        </div>
+                        <div class="col-9">
+                            <a href="#">
+                                <h2>Lorem ipsum dolor sit amet</h2>
+                            </a>
+                            <div>
+                                ore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in rep
+                            </div>
+                            <div class="question-footer">
+                                <span class="normal-text "><a href="#">answer (3)</a><span><span class = "normal-text marginleft40">Tags: <a class = "marginleft10" href="#">black-jack</a><a class = "marginleft10" href="#">bender</a><span></span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination margintop40">
+                            <li class="page-item "><a class="page-link" href="#">1</a></li>
+                            <li class="page-item "><a class="page-link" href="#">2</a></li>
+                            <li class="page-item "><a class="page-link" href="#">3</a></li>
+                            <li class="page-item "><a class="page-link" href="#">...</a></li>
+                            <li class="page-item "><a class="page-link" href="#">53</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="col-4 navigation margintop40 ">
+                    <span class="big-text ">Popular Tags<span></span>
+                    <div class="flex-container">
+                        <span class="elem normal-text">perl</span>
+                        <span class="elem normal-text hot-tag">python</span>
+                        <span class="elem normal-text">TechnoPark</span>
+                        <span class="elem normal-text hot-tag">MySQL</span>
+                        <span class="elem normal-text recent-tag">Django</span>
+                        <span class="elem normal-text">Mail.ru</span>
+                        <span class="elem normal-text">Voloshin</span>
+                        <span class="elem normal-text new-tag">Firefox</span>
+                    </div>
+                    <span class="big-text ">Best Members<span></span>
+                    <div class="flex-container-col med-text">
+                        <a href="#">Mr. Freeman</a>
+                        <a href="#">Dr. House</a>
+                        <a href="#">Bender</a>
+                        <a href="#">Queen Victoria</a>
+                        <a href="#">V. Pupkin</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../static/js/script.js"></script>
+</body>
+
+</html>

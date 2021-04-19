@@ -1,0 +1,166 @@
+<!-- <div class="question-header">
+    <span class="big-text ">New Question<span>
+</div>
+
+<div class="col-3">
+    <span class="med-text ">New Question<span>
+</div>
+<div class="col-9 question">
+    <div>
+        ore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in rep
+    </div>
+</div> -->
+
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <title>Asked</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/css/my.css" rel="stylesheet">
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+        
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+
+</head>
+
+<body class="d-flex flex-column h-100">
+
+    <header>
+        <!-- Fixed navbar -->
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <div class="container-fluid spacearound">
+                <a class="navbar-brand med-text" href="#">Asked Kravtsov</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+                <form class="d-flex search-box">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Ask</button>
+                </form>
+                <div class="row header">
+                    <div id="user-block-login" class="user-block-visible">
+                        <div class="col-4">
+                            <img src="../static/img/avatar.jpg">
+
+                        </div>
+                        <div class="col-8">
+
+                            <div>Dr. Pepper</div>
+                            <button id="settings-btn" class="btn btn-outline-primary" type="submit">settings</button>
+                            <!-- <a href="#">settings</a> -->
+                            <button id="logout-btn" class="btn btn-outline-primary" type="submit">log out</button>
+                            <!-- <a id="login-btn" href="#">log out</a> -->
+                        </div>
+                    </div>
+                    <div id="user-block-logout" class="col-12 user-block-hidden">
+                        <button id="login-btn" type="button" class="btn btn-primary">Log in</button>
+                        <button id="register-btn" type="button" class="btn btn-primary">Register</button>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Begin page content -->
+    <main class="flex-shrink-0">
+
+        <div class="container">
+            <div class="row ">
+                <div class="col-8">
+                    <!-- {% extends "../public/index.html" %} -->
+                    <div class="question-header">
+                        <span class="big-text ">Log In<span>
+                    </div>
+                    <div class = "message-box error">
+                        <span class="med-text ">Error, wrong password or login<span></span>
+                    </div>
+                    <div class="row settings-row ">
+
+                        <div class="col-3">
+                            <span class="normal-text ">Login<span>
+                        </div>
+                        <div class="col-9 settings-field ">
+                            <input type="text" class="form-control" placeholder="Login" aria-label="Login">
+                        </div>
+                    </div>
+                    <div class="row settings-row ">
+                        <div class="col-3">
+                            <span class="normal-text ">Password<span>
+                        </div>
+                        <div class="col-9 settings-field ">
+                            <div>
+                                <input type="text" class="form-control" placeholder="Password" aria-label="Password">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="row settings-row ">
+
+                        <div class="col-3">
+                            
+                        </div>
+                        <div class="col-9 ask-btn-pad">
+                            
+                            <button id="ask-btn" type="button" class="btn btn-primary">Log in</button><br><br>
+                            <a class = "margintop40" href = #>Create new account</a>
+                        </div>
+                    </div>
+                   
+                    
+                </div>
+
+                <div class="col-4 navigation margintop40 ">
+                    <span class="big-text ">Popular Tags<span></span>
+                            <div class="flex-container">
+                                <span class="elem normal-text">perl</span>
+                                <span class="elem normal-text hot-tag">python</span>
+                                <span class="elem normal-text">TechnoPark</span>
+                                <span class="elem normal-text hot-tag">MySQL</span>
+                                <span class="elem normal-text recent-tag">Django</span>
+                                <span class="elem normal-text">Mail.ru</span>
+                                <span class="elem normal-text">Voloshin</span>
+                                <span class="elem normal-text new-tag">Firefox</span>
+                            </div>
+                            <span class="big-text ">Best Members<span></span>
+                            <div class="flex-container-col med-text">
+                                <a href="#">Mr. Freeman</a>
+                                <a href="#">Dr. House</a>
+                                <a href="#">Bender</a>
+                                <a href="#">Queen Victoria</a>
+                                <a href="#">V. Pupkin</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </main>
+
+
+
+
+    <script src="../static/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../static/js/script.js"></script>
+</body>
+
+</html>
