@@ -186,4 +186,4 @@ class Command(BaseCommand):
         self.stdout.write("Лайки вопросов заполнены")
         self.fill_answer_likes(sizes[5])
         self.stdout.write("Лайки ответов заполнены")
-        self.stdout.write("Успешно", ending='')
+        self.stdout.write("Успешно")

@@ -1,19 +1,13 @@
 <span class="big-text ">Popular Tags<span></span>
 <div class="flex-container">
-    <span class="elem normal-text">perl</span>
-    <span class="elem normal-text hot-tag">python</span>
-    <span class="elem normal-text">TechnoPark</span>
-    <span class="elem normal-text hot-tag">MySQL</span>
-    <span class="elem normal-text recent-tag">Django</span>
-    <span class="elem normal-text">Mail.ru</span>
-    <span class="elem normal-text">Voloshin</span>
-    <span class="elem normal-text new-tag">Firefox</span>
+    {% for tag in popular_tags %}
+        <a class="tag-item"  href="{% url 'tagged_questions' str=tag.name %}">{{ tag.name }}</a>
+    {% endfor %}
 </div>
 <span class="big-text ">Best Members<span></span>
 <div class="flex-container-col med-text">
-    <a href="#">Mr. Freeman</a>
-    <a href="#">Dr. House</a>
-    <a href="#">Bender</a>
-    <a href="#">Queen Victoria</a>
-    <a href="#">V. Pupkin</a>
+    {% for member in members %}
+        <a class="mem-item">{{ member }}</a>
+    {% endfor %}
+
 </div>

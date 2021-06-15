@@ -1,11 +1,27 @@
 {% load static %}
 <div class="row question">
     <div class="col-3">
-        {% comment %} <img src="{%  static "img/avatar.jpg" %}" alt = "avatar"> {% endcomment %}
-        <img src="{% static "img/avatar.jpg" %}">
-        <p><input class="stat" type="number" name="t" value="0" step="1"></p>
-        {% comment %} <img src="{% static "img/minus.png" %}">
-        <img src="{% static "img/plus.png" %}"> {% endcomment %}
+       <div class ="row-9"> 
+                                <img src="{{ question.author.avatar.url }}">
+                                
+                            </div>
+                            <div class="container-9 " >
+                                <div class="row rating">
+                                    <div class="col ">
+                                        <img src="/media/minus.png" class="img-fluid">
+                                    </div>
+                                    <div class="col">
+                                        <img src="/media/plus.png" class="img-fluid">
+                                    </div>
+                                </div>
+                                <div class="row rating-points">
+                                    {{ question.rating }}
+                                </div>
+                                <span class = "normal-text ">Author: </a>
+                                    <a href="#">{{ question.author.user.username }}</a><br>
+                                    <a >{{ question.date }}</a>
+                            </div>
+                        </div>
     </div>
     <div class="col-9">
         <a href="{% url "one_question"  question.id %}">

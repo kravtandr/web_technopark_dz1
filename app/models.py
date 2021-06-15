@@ -39,7 +39,7 @@ class Profile(models.Model):
     objects = ProfileManager()
 
     def __str__(self):
-        return self.login
+        return self.user.__str__()
 
 class Question(models.Model):
     title = models.CharField(max_length=30)
