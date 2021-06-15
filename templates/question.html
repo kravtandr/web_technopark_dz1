@@ -1,0 +1,13 @@
+{% extends "include/main_base.html" %} 
+{% load static %}
+{% block content%} 
+    {%include "include/question_focus.html"%}
+    <hr> 
+    {%include "include/answer.html"%} 
+    {%include "include/answer.html"%} 
+    <hr>
+     <div class="form-group new-question">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Your answer"></textarea>
+                    </div>
+                    <button id="answer-btn" type="button" class="btn btn-primary">Answer</button>
+{% endblock content%}  

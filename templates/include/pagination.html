@@ -1,0 +1,7 @@
+<nav aria-label="Page navigation example">
+   <ul class="pagination margintop40">
+        {% for i in object_list.paginator.get_elided_page_range %}
+        <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+        {% endfor %}
+    </ul>
+</nav>

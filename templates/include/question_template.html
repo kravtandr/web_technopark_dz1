@@ -1,0 +1,42 @@
+{% load static %}
+ <div class="row question">
+
+                        <div class="col-3">
+                            <div class ="row-9"> 
+                                <img src="{{ question.author.avatar.url }}">
+                                
+                            </div>
+                            <div class="container-9 " >
+                                <div class="row rating">
+                                    <div class="col ">
+                                        <img src="/media/minus.png" class="img-fluid">
+                                    </div>
+                                    <div class="col">
+                                        <img src="/media/plus.png" class="img-fluid">
+                                    </div>
+                                </div>
+                                <div class="row rating-points">
+                                    {{ question.rating }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-9">
+                            <a href="#">
+                                <h2>{{ question.title }}</h2>
+                            </a>
+                            <div>
+                               {{ question.text }}
+                            </div>
+                            <div class="question-footer">
+                                <a class="normal-text " href="#">answer ({{ question.answers.all.count }})</a>
+                                <span class="normal-text marginleft40">Tags:
+                                    {% for tag in question.tags.all %}
+                                        <a class = "marginleft10" href="{% url 'tagged_questions' str=tag %}">{{ tag }}</a>
+                                    {% endfor %}
+                                </span>
+                                <span class = "normal-text marginleft40">Author: </a><a href="#">{{ question.author.user.username }}</a>
+                                <a >{{ question.date }}</a>
+                            </div>
+
+                        </div>
+                    </div>

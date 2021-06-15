@@ -1,0 +1,14 @@
+{% extends "include/main_base.html" %} 
+{% block question-header%} 
+<div class="question-header">
+    <span class="big-text ">Log In<span>
+</div>
+{% endblock question-header%} 
+{% block error%}
+<div class="message-box error">
+    <span class="med-text ">Error, wrong password or login<span></span>
+</div>
+{% endblock error%}
+{% block content%} 
+    {%include "include/login_form.html"%} 
+{% endblock content%}  

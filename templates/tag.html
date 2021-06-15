@@ -1,0 +1,15 @@
+{% extends "include/main_base.html" %} 
+{% load static %}
+{% block question-header%} 
+ <div class="question-header">
+    <span class="big-text ">Bender<span><span class = "med-text">
+</div>
+{% endblock question-header%} 
+{% block content %}
+{% for question in object_list %}
+    {% include "include/question_template.html" %}
+{% endfor %}
+{% endblock content %}
+{% block pagination%} 
+    {%include "include/pagination.html"%} 
+{% endblock pagination%}  

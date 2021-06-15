@@ -1,0 +1,24 @@
+{% extends "include/main_base.html" %} 
+{% block question-header%} 
+ <div class="question-header">
+    <span class="big-text ">New Questions<span><span class = "med-text"><a class = "marginleft40" href="{% url "hot"%}">Hot Questions</a><span></span>
+</div>
+{% endblock question-header%} 
+
+{% block content %}
+{% for question in object_list %}
+    {% include "include/question_template.html" %}
+{% endfor %}
+{% endblock content %}
+
+{% comment %} {% block content%} 
+    {%include "include/question_template.html"%} 
+    {%include "include/question_template.html"%} 
+    {%include "include/question_template.html"%} 
+    {%include "include/question_template.html"%} 
+    {%include "include/question_template.html"%} 
+{% endblock content%} {% endcomment %}
+
+{% block pagination%} 
+    {%include "include/pagination.html"%} 
+{% endblock pagination%}  
