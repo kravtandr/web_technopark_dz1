@@ -5,9 +5,11 @@
 </div>
 {% endblock question-header%} 
 {% block error%}
-<div class="message-box error">
-    <span class="med-text ">Error, wrong password or login<span></span>
-</div>
+{% if alert %}
+    <div class="alert alert-danger" role="alert">
+        {{ alert }}
+    </div>
+{% endif %}
 {% endblock error%}
 {% block content%} 
     {%include "include/login_form.html"%} 

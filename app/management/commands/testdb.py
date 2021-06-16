@@ -42,7 +42,7 @@ class Command(BaseCommand):
             questions.append(Question(author_id=choice(list(Profile.objects.values_list('id', flat=True))),
                 text=' '.join(fake.sentences(10)),
                 title=fake.sentence(5)[:-1]+"?",
-                date=fake.date_between(start_date='-5y', end_date='today'),
+                date=fake.date_between(start_date='-2y', end_date='today'),
             ))
 
         Question.objects.bulk_create(questions)
@@ -52,12 +52,9 @@ class Command(BaseCommand):
             )
         )
         for q in Question.objects.all():
-            tag1 = Tag.objects.get(id=choice(tags_ids))
-            tag2 = Tag.objects.get(id=choice(tags_ids))
-            if tag1 != tag2:
-                q.tags.add(tag1, tag2)
-            else:
-                q.tags.add(tag1)
+            for i in range(fake.random_int(min=1, max=4)):
+                q.tags.add(Tag.objects.get(id=choice(tags_ids)))
+
 
     def fill_tags(self, cnt):
         tags = set()
@@ -131,48 +128,10 @@ class Command(BaseCommand):
             ))
         AnswerLike.objects.bulk_create(answers_likes)
 
-    # def fill_likes(self, cnt):
-    #     vote_type = ['1', '-1']
-    #     questions_ids = list(
-    #         Question.objects.values_list(
-    #             'id', flat=True
-    #         )
-    #     )
-    #     answers_ids = list(
-    #         Answer.objects.values_list(
-    #             'id', flat=True
-    #         )
-    #     )
-    #     author_ids = list(
-    #         Profile.objects.values_list(
-    #             'id', flat=True
-    #         )
-    #     )
-    #     likes = []
-    #     for i in range(cnt):
-    #         like = choice(vote_type)
-    #         if(fake.random_int(min=0, max=1)):
-    #             curr_id = choice(questions_ids)
-    #             Question.objects.get(id=curr_id).update(rating=F('rating') + like)
-    #         else:
-    #             curr_id = choice(answers_ids)
-                
-    #         likes.append(Like(
-    #             like=like,
-    #             author_id=choice(author_ids),
-    #             question_id=curr_id
-    #         ))
-
-    #     Like.objects.bulk_create(likes)
-
 
     def handle(self, *args, **options):
-        if options['db_size'] == 'large':
-            sizes = [10001, 11000, 100001, 1000001, 900000, 900000]
-        elif options['db_size'] == 'medium':
-            sizes = [500, 1000, 1200, 2500, 1800, 1800]
-        else:
-            sizes = [10, 20, 20, 40, 30, 30]
+        sizes = [100, 100, 100, 100, 100, 100]
+        # sizes = [10000, 10000, 100000, 1000000, 1000000, 1000000]
 
         self.fill_profiles(sizes[0])
         self.stdout.write("Профили заполнены")

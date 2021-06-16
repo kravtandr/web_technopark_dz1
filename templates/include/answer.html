@@ -3,33 +3,45 @@
 
     <div class="col-3">
         <img src={{ answer.author.avatar.url }}>
-        <div class="container-9 " >
-            <div class="row rating">
-                <div class="col ">
-                    <img src="/media/minus.png" class="img-fluid">
-                </div>
-                <div class="col">
-                    <img src="/media/plus.png" class="img-fluid">
-                </div>
-            </div>
-            <div class="row rating-points">
-                {{ question.rating }}
-            </div>
+        <div class="container-9 ">
+             <div class="row rating">
+                                    <div class="col">
+                                    <img src="/media/plus.png" class="js-vote img-fluid js-{{ question.id }} img-fluid " data-action="like" data-qid="{{ question.pk }}">
+                                    </div><div class="col">
+                                    <img src="/media/minus.png" class="js-vote img-fluid js-{{ question.id }} img-fluid " data-action="dislike" data-qid="{{ question.pk }}"></a>
+                                    </div> 
+                                </div>
+                                <div class="row rating-points">
+                                    {% if question.rating %}
+                                        <div class = "vote q-{{ question.id }}">{{ question.rating }}</div>
+                                    {% else %}
+                                        <div class = "vote q-{{ question.id }}">{{ 0 }}</div>
+                                    {% endif %}
+                                </div> 
+            <span class = "normal-text ">Author: </a>
+            <a href="#">{{ answer.author.user.username }}</a><br>
+            <a >{{ answer.date }}</a>
         </div>
     </div>
     <div class="col-9">
-
         <div>
            {{ answer.text }}
         </div>
         <div class="question-footer">
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                                        Correct!
-                                    </label>
+                {% if answer.question.author.id == request.user.profile.id %}
+                {% if answer.correct %}
+                <input class="form-correct-input correct-{{ answer.id }}" type="checkbox" value="" data-aid="{{ answer.id }}" checked>
+                <i class="check-text">Checked as correct </i>
+                {% else %}
+                <input class="form-correct-input correct-{{ answer.id }}" type="checkbox" value="" data-aid="{{ answer.id }}">
+                {% endif %}
+                <label class="form-correct-label">
+                </label>
+                {% elif answer.correct %}
+                <i class="check-text">Checked as correct </i>
+                {% endif %}
             </div>
         </div>
-</div>
     </div>
 </div>

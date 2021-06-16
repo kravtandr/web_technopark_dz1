@@ -1,42 +1,13 @@
-<div class="row new-question ">
-
-    <div class="col-3">
-        <span class="med-text ">Title<span>
-    </div>
-    <div class="col-9 question-ask  title">
-        <div>
-            <input type="text" class="form-control" placeholder="Title" aria-label="Title">
-        </div>
-    </div>
+{% load bootstrap4 %}
+<form class="col-8" action="/ask/" method="post">
+           {% csrf_token %}
+<div class="col-12">
+    {% bootstrap_form form %}
+    
 </div>
-<div class="row new-question ">
-
-    <div class="col-3">
-        <span class="med-text ">Text<span>
-    </div>
-    <div class="col-9 question-ask  text">
-        <div class="form-group">
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Text" ></textarea>
-          </div>
-    </div>
+    {% buttons %}
+<div class="form-btn">
+    <button class="btn btn-primary margintop40" type="submit">ASK!</button>
 </div>
-<div class="row new-question ">
-
-    <div class="col-3">
-        <span class="med-text ">Tags<span>
-    </div>
-    <div class="col-9 question-ask  tags">
-        <div>
-            <input type="text" class="form-control" placeholder="Tags" aria-label="Tags">
-        </div>
-    </div>
-</div>
-<div class="row new-question ">
-
-    <div class="col-3">
-        
-    </div>
-    <div class="col-9 ask-btn-pad">
-        <button id="ask-btn" type="button" class="btn btn-primary">ASK!</button>
-    </div>
-</div>
+    {% endbuttons %}
+</form>

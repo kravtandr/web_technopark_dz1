@@ -8,16 +8,20 @@
                             </div>
                             <div class="container-9 " >
                                 <div class="row rating">
-                                    <div class="col ">
-                                        <img src="/media/minus.png" class="img-fluid">
-                                    </div>
                                     <div class="col">
-                                        <img src="/media/plus.png" class="img-fluid">
-                                    </div>
+                                    <img src="/media/plus.png" class="js-vote img-fluid js-{{ question.id }} img-fluid " data-action="like" data-qid="{{ question.pk }}">
+                                    </div><div class="col">
+                                    <img src="/media/minus.png" class="js-vote img-fluid js-{{ question.id }} img-fluid " data-action="dislike" data-qid="{{ question.pk }}"></a>
+                                    </div> 
                                 </div>
                                 <div class="row rating-points">
-                                    {{ question.rating }}
-                                </div>
+                                            {% if question.rating %}
+                                            <div class = "vote q-{{ question.id }}">{{ question.rating }}</div>
+                                            {% else %}
+                                            <div class = "vote q-{{ question.id }}">{{ 0 }}</div>
+                                            {% endif %}
+                                </div> 
+
                                 <span class = "normal-text ">Author: </a>
                                     <a href="#">{{ question.author.user.username }}</a><br>
                                     <a >{{ question.date }}</a>
@@ -27,18 +31,20 @@
                             <a href="{% url 'one_question' pk=question.id %}">
                                 <h2>{{ question.title }}</h2>
                             </a>
-                            <div>
+                            <div class="fill-text">
                                {{ question.text }}
                             </div>
-                            <div class="question-footer">
-                                <a class="normal-text " href="#">answer ({{ question.answers.all.count }})</a>
-                                <span class="normal-text marginleft40">Tags:
+                            
+                            <div class="question-footer ">
+                                <div>
+                                    <a class="normal-text " href="{% url 'one_question' pk=question.id %}">answer ({{ question.answers.all.count }})</a>
+                               
+                                 <span class="normal-text marginleft40">Tags:
                                     {% for tag in question.tags.all %}
                                         <a class = "marginleft10" href="{% url 'tagged_questions' str=tag %}">{{ tag }}</a>
                                     {% endfor %}
                                 </span>
-                                
+                                </div>
                             </div>
-
                         </div>
                     </div>

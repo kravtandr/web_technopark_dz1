@@ -28,9 +28,17 @@ urlpatterns = [
     path('question/<int:pk>/', views.question, name='one_question'),
     path('hot/', views.hot_questions, name='hot' ),
     path('login/', views.login, name='login'),
+    path('logout/', views.logout, name='logout'),
     path('signup/', views.signup, name='signup'),
     path('ask/', views.ask, name='ask'),
     path('settings/', views.settings, name='settings'),
+    path('answer/', views.answer, name='answer'),
+    path('correct/', views.correct, name='correct'),
+    path('question_vote/', views.question_vote, name='question_vote'),
+    path('answer_vote/', views.question_vote, name='answer_vote'),
+    
+    
+
     
 ]
 urlpatterns += staticfiles_urlpatterns()

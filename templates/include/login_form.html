@@ -1,3 +1,21 @@
+
+{% load bootstrap4 %}
+<form class="login col-8" action="/login/" method="post">
+        {% csrf_token %}
+    <input type="hidden" name="next" value="{{ request.GET.next }}" />
+    <div class="mb-3">
+    {% bootstrap_form form %}
+    </div>
+        {% buttons %}
+    <button type="submit" class="btn btn-primary">Log in</button>
+        <a class= "marginleft40" href="{% url 'signup' %}"> Create new account</a>
+        {% endbuttons %}
+
+</form>
+{% comment %} 
+<form class="login" action="/login/" method="post">
+{% csrf_token %}
+<input type="hidden" name="next" value="{{ request.GET.next }}" />
 <div class="row settings-row ">
 
     <div class="col-3">
@@ -24,7 +42,8 @@
     </div>
     <div class="col-9 ask-btn-pad">
         
-        <button id="ask-btn" type="button" class="btn btn-primary">Log in</button><br><br>
-        <a class = "margintop40" href = #>Create new account</a>
+        <button id="ask-btn" type="submit" class="btn btn-primary">Log in</button><br><br>
+        <a class = "margintop40" href = {% url 'signup' %}>Create new account</a>
     </div>
 </div>
+</form> {% endcomment %}

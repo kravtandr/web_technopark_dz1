@@ -242,3 +242,37 @@ hr {
 .error {
     color: red;
 }
+
+.nodecoration {
+    text-decoration: none;
+}
+
+.fill-text {
+    word-wrap: break-word;
+}
+
+.vote {
+    margin-left: 90px;
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+    margin-left: 40%;
+}
+
+.arrow:hover {
+    border: solid #9900ff;
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}

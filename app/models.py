@@ -56,10 +56,12 @@ class Question(models.Model):
 class Answer(models.Model):
     text =  models.CharField(max_length=5000)
     date = models.DateField()
+    correct = models.BooleanField(default=False)
     author = models.ForeignKey('Profile', on_delete=models.CASCADE, related_name='answers')
     question = models.ForeignKey('Question', on_delete=models.CASCADE, related_name='answers')
     objects = AnswerManager()
 
+   
     def __str__(self):
         return self.title
 
@@ -70,13 +72,6 @@ class Tag(models.Model):
     def __str__(self):
         return self.name
 
-
-# class Like(models.Model):
-#     liked_question = models.ForeignKey('Question', on_delete=models.CASCADE, null=True, related_name='likes')
-#     liked_answer = models.ForeignKey('Answer', on_delete=models.CASCADE, null=True, related_name='likes')
-#     vote_type = (('like', '1'), ('dislike', '-1'))
-#     author = models.ForeignKey('Profile', on_delete=models.CASCADE)
-#     date = models.DateTimeField(auto_now_add=True)
 
 class QuestionLike(models.Model):
     LIKE_CHOICES = (('LIKE', '1'), ('DISLIKE', '-1'))

@@ -1,55 +1,10 @@
-<div class="row settings-row ">
-
-    <div class="col-3">
-        <span class="normal-text ">Login<span>
-    </div>
-    <div class="col-9 settings-field ">
-        <div>
-            <input type="text" class="form-control" placeholder="Login" aria-label="Login">
+{% load bootstrap4 %}
+<form class="signup margintop40 col-8" enctype="multipart/form-data" action="/settings/" method="post">
+            {% csrf_token %}
+        <div class="mb-5 ">
+            {% bootstrap_form form %}
         </div>
-    </div>
-</div>
-<div class="row settings-row ">
-
-    <div class="col-3">
-        <span class="normal-text ">Email<span>
-    </div>
-    <div class="col-9 settings-field ">
-        <div>
-            <input type="text" class="form-control" placeholder="Email" aria-label="Email">
-        </div>
-    </div>
-</div>
-<div class="row settings-row ">
-
-    <div class="col-3">
-        <span class="normal-text ">NickName<span>
-    </div>
-    <div class="col-9 settings-field">
-        <div>
-            <input type="text" class="form-control" placeholder="NickName" aria-label="NickName">
-        </div>
-    </div>
-</div>
-<div class="row settings-row avatar-block">
-
-    <div class="col-3">
-        <span class="normal-text ">Upload avatar<span>
-    </div>
-    <div class="col-9 ask-btn-pad">
-        <img class= "avatar-block-img" src="../static/img/avatar.jpg">
-        <div class="input-group mb-3 margintop40">
-            <input type="file" class="form-control" id="inputGroupFile02">
-            <label class="input-group-text" for="inputGroupFile02">choose</label>
-          </div>
-    </div>
-</div>
-<div class="row settings-row ">
-
-    <div class="col-3">
-        
-    </div>
-    <div class="col-9 ask-btn-pad">
-        <button id="ask-btn" type="button" class="btn btn-primary">Save</button>
-    </div>
-</div>
+    {% buttons %}
+    <button type="submit" class="btn btn-primary">Save</button>
+    {% endbuttons %}
+</form> 

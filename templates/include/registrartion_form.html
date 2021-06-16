@@ -1,3 +1,5 @@
+<form class="signup center"  enctype="multipart/form-data" action="/signup/" method="post">
+{% csrf_token %}
 <div class="row settings-row ">
 
     <div class="col-3">
@@ -69,7 +71,9 @@
     </div>
     <div class="col-9 ask-btn-pad">
         
-        <button id="ask-btn" type="button" class="btn btn-primary">Register</button><br><br>
+        <button id="ask-btn" type="submit" class="btn btn-primary">Register</button><br><br>
         
     </div>
 </div>
+
+</form>

@@ -1,5 +1,10 @@
 {% extends "include/main_base.html" %} 
 {% load static %}
+{% block question-header%} 
+ <div class="question-header">
+    <span class="big-text ">Hot Questions<span><span class = "med-text"><a class = "marginleft40" href="{% url "base"%}">New Questions</a><span></span>
+</div>
+{% endblock question-header%} 
 {% block content %}
 {% for question in object_list %}
     {% include "include/question_template.html" %}

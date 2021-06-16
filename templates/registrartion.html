@@ -1,14 +1,30 @@
 {% extends "include/main_base.html" %} 
-{% block question-header%} 
-<div class="question-header">
-    <span class="big-text ">Register<span>
+{% load static %}
+{% load bootstrap4 %}
+
+{% block title %}Register{% endblock title %}
+
+{% block align %}{% endblock align %}
+
+{% block content %}
+<div class="col-4 q-title center">
+    <h1 class="title-content">Register</h1>
 </div>
-{% endblock question-header%} 
-{% block error%}
-<div class="message-box error">
-    <span class="med-text ">Error, email already registered<span></span>
-</div>
-{% endblock error%}
-{% block content%} 
-    {%include "include/registrartion_form.html"%} 
-{% endblock content%}  
+
+{% if alert %}
+    <div class="alert alert-danger center" role="alert">
+        {{ alert }}
+    </div>
+{% endif %}
+
+<form class="signup center"  enctype="multipart/form-data" action="/signup/" method="post">
+            {% csrf_token %}
+    <div class="mb-3">
+         {% bootstrap_form form %}
+    </div>
+    {% buttons %}
+    <button type="submit" class="btn btn-primary">Sign up</button>
+    {% endbuttons %}
+</form>
+{% endblock content %}
+

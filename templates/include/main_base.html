@@ -57,13 +57,18 @@
             </div>
         </div>
     </main>
-
+    
 
 
 
     <script src="{%  static "js/bootstrap.bundle.min.js" %}"></script>
 
-    <script src="{%  static "js/script.js" %}"></script>
+    {% comment %} <script src="{%  static "js/script.js" %}"></script> {% endcomment %}
+    <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/crsf.js' %}"></script>
+    <script src="{% static 'js/vote.js' %}"></script>
+    <script src="{% static 'js/checkbox.js' %}"></script>
 </body>
 
 </html>
